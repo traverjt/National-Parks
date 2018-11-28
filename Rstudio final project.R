@@ -19,21 +19,6 @@ df <- as.ATSP(df)
 tour <- solve_TSP(df, 'nn')
 tour_length(tour)
 tour <- as.data.frame(tour)
-path <- cut_tour(tour, "Distance.Badlands+National+Park", exclude_cut=TRUE)
-path <- as.matrix(path)
-path <- as.ATSP(path)
-tour <- solve_TSP(path, 'nn')
-tour_length(path)
-
-
-
-etsp <- df
-etsp
-n_of_cities(etsp)
-labels(etsp)
-tour <- solve_TSP(etsp)
-tour
-plot(etsp, df, tour_col = "red")
 
 
 df <- as.matrix(df)
@@ -41,7 +26,7 @@ df <- as.ATSP(df)
 tour_reptitive <- solve_TSP(df, 'repetitive_nn')
 tour_length(tour_reptitive)
 tour_reptitive <- as.data.frame(tour_reptitive)
-labels(tour_reptitive)
+
 
 df <- as.matrix(df)
 df <- as.ATSP(df)
@@ -72,22 +57,6 @@ df <- as.ATSP(df)
 tour_opt <- solve_TSP(df, 'two_opt')
 tour_length(tour_opt)
 tour_opt <- as.data.frame(tour_opt)
-
-
-
-
-library("maps")
-library("sp")
-library("maptools")
-gpclibPermit()
-df <- as.matrix(df)
-df <- as.ATSP(df)
-tour <- solve_TSP(df, 'nn')
-library("maps")
-library("sp")
-library("maptools")
-plot(as(, "spatial"), axes = TRUE)
-plot(, add=TRUE, col="gray")
 
 
 
